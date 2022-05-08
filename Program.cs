@@ -22,6 +22,17 @@ namespace IngameScript
 {
     partial class Program : MyGridProgram
     {
+        public enum Loc
+        {
+            Main,
+            GetCommand,
+            Parse,
+            ParseCommand,
+            BlockWith,
+            GetCustomData,
+            GetCodeBlocks,
+            Between
+        }
 
         public Program()
         {
