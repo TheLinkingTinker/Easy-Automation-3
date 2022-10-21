@@ -48,7 +48,7 @@ namespace IngameScript
             public void Fail(string errorMsg)
             {
                 conclusion = false;
-                errorMessage = errorMsg;
+                errorMessage += "\n" + errorMsg;
             }
 
             public bool Succeeded()
