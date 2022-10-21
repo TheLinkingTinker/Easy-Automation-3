@@ -20,11 +20,16 @@ using VRageMath;
 
 namespace IngameScript
 {
-    // This template is intended for extension classes. For most purposes you're going to want a normal
-    // utility class.
-    // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods
     static class ExtensionClass
     {
-
+        public static List<string> ToList(this String str, char spliter = ',', char[] spliters = null, bool trim = true)
+        {
+            string[] a;
+            a = spliters != null ? str.Split(spliters) : str.Split(spliter);
+            var b = a.ToList();
+            if (trim) b = a.Select(p => p.Trim()).ToList();
+            b.RemoveAll(x => string.IsNullOrEmpty(x));
+            return b;
+        }
     }
 }
